@@ -11,7 +11,7 @@ export default function Footer() {
         <div style={{color:'#666', textAlign:'left'}}>
           <p style={{marginBottom:'12px'}}>
             <strong>Phone:</strong><br/>
-            <strong>+91 0000000000</strong>
+            <strong>+91 98473 43337</strong>
           </p>
           <p style={{marginBottom:'12px'}}>
             <strong>Physical address:</strong><br/>

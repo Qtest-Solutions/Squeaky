@@ -74,7 +74,7 @@ export default function ContactPage() {
               📞
             </div>
             <h3>Phone</h3>
-            <p style={{ color: 'rgba(255,255,255,0.8)' }}>+91 0000000000</p>
+            <p style={{ color: 'rgba(255,255,255,0.8)' }}>+91 98473 43337</p>
           </div>
 
           <div>
