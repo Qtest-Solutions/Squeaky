@@ -1,17 +1,32 @@
-import Link from 'next/link';
-
 export default function Footer() {
   return (
-    <footer className="site-footer">
-      <div className="container">
-        <p>Phone: <strong>(701) 814-6992</strong></p>
-        <p style={{marginTop:8}}>Physical address: <strong>6296 Donnelly Plaza, Ratkeville, Bahamas</strong></p>
-        <div className="links">
-          <Link href="/about">About</Link>
-          <Link href="/services">Services</Link>
-          <Link href="/contact">Contact</Link>
+    <footer style={{backgroundColor:'white', padding:'60px 20px', borderTop:'1px solid #e0e0e0'}}>
+      <div style={{display:'flex', justifyContent:'space-between', alignItems:'start', maxWidth:'1200px', margin:'0 auto', marginBottom:'40px'}}>
+        {/* Logo Section */}
+        <div>
+          <img src="/Logo-01.png" alt="SqueakyFMS" style={{height:'80px', marginBottom:'20px'}} />
         </div>
-        <p style={{marginTop:18}}>&copy; 2025 SqueakyFMS</p>
+        
+        {/* Contact Info - Right Corner */}
+        <div style={{color:'#666', textAlign:'left'}}>
+          <p style={{marginBottom:'12px'}}>
+            <strong>Phone:</strong><br/>
+            <strong>+91 0000000000</strong>
+          </p>
+          <p style={{marginBottom:'12px'}}>
+            <strong>Physical address:</strong><br/>
+            <strong>Kakkanchery, Near KINFRA, Malappuram</strong>
+          </p>
+          <p>
+            <strong>Email address:</strong><br/>
+            <strong>squeakyfms@gmail.com</strong>
+          </p>
+        </div>
+      </div>
+
+      {/* Copyright at Bottom */}
+      <div style={{textAlign:'center', color:'#999', fontSize:'14px', paddingTop:'20px', borderTop:'1px solid #e0e0e0'}}>
+        <p>&copy; 2025 SqueakyFMS. All rights reserved.</p>
       </div>
     </footer>
   );

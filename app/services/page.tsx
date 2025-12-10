@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import Header from '../components/Header';
+import Footer from '../components/Footer';
 
 export const metadata = {
   title: 'Services – SqueakyFMS',
@@ -80,30 +81,7 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      <footer className="site-footer" style={{display:'grid', gridTemplateColumns:'1fr 1fr 1fr', gap:'40px', alignItems:'start', padding:'60px 20px'}}>
-        <div className="container">
-          <img src="/wp-content/uploads/2025/12/Logo-01.png" alt="SqueakyFMS" style={{height:'80px', marginBottom:'20px'}} />
-        </div>
-        
-        <div style={{textAlign:'center', color:'var(--text-light)'}}>
-          <p style={{marginBottom:'20px'}}>&copy; 2025 SqueakyFMS. All rights reserved.</p>
-        </div>
-
-        <div style={{color:'var(--text-light)'}}>
-          <p style={{marginBottom:'12px'}}>
-            <strong>Phone:</strong><br/>
-            <strong>+91 0000000000</strong>
-          </p>
-          <p style={{marginBottom:'12px'}}>
-            <strong>Physical address:</strong><br/>
-            <strong>Kakkanchery, Near KINFRA, Malappuram</strong>
-          </p>
-          <p>
-            <strong>Email address:</strong><br/>
-            <strong>squeakyfms@gmail.com</strong>
-          </p>
-        </div>
-      </footer>
+      <Footer />
     </>
   );
 }

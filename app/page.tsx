@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import Header from './components/Header';
+import Footer from './components/Footer';
 
 export default function Home() {
   return (
@@ -8,7 +9,7 @@ export default function Home() {
 
       {/* Hero Section */}
       <section className="hero" style={{display:'flex', alignItems:'center', gap:'40px', padding:'80px 20px'}}>
-        <div className="container lead" style={{flex:'0 0 50%'}}>
+        <div className="container lead" style={{flex:'0 0 40%'}}>
           <h1>Professional Facility Management Services You Can Trust</h1>
           <p>Squeaky FMS delivers reliable, efficient, and cost-effective facility management solutions for residential, commercial, and industrial clients.</p>
           <Link href="/contact" className="btn">Contact Us</Link>
@@ -18,7 +19,7 @@ export default function Home() {
 
       {/* Trust Section */}
       <section style={{display:'flex', gap:'30px', padding:'60px 20px', backgroundColor:'#f5f5f5'}}>
-        <div style={{flex:'0 0 40%', backgroundColor:'#6BA643', color:'white', padding:'40px', display:'flex', alignItems:'center'}}>
+        <div style={{flex:'0 0 35                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         %', backgroundColor:'#6BA643', color:'white', padding:'40px', display:'flex', alignItems:'center'}}>
           <div>
             <h3 style={{marginBottom:'20px'}}>Quality, Safety, Reliability Every Time.</h3>
             <p>We maintain the highest standards in every service we provide.</p>
@@ -158,31 +159,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="site-footer" style={{display:'grid', gridTemplateColumns:'1fr 1fr 1fr', gap:'40px', alignItems:'start', padding:'60px 20px'}}>
-        <div className="container">
-            <img src="/Logo-01.png" alt="SqueakyFMS" style={{height:'80px', marginBottom:'20px'}} />
-        </div>
-        
-        <div style={{textAlign:'center', color:'var(--text-light)'}}>
-          <p style={{marginBottom:'20px'}}>&copy; 2025 SqueakyFMS. All rights reserved.</p>
-        </div>
-
-        <div style={{color:'var(--text-light)'}}>
-          <p style={{marginBottom:'12px'}}>
-            <strong>Phone:</strong><br/>
-            <strong>+91 0000000000</strong>
-          </p>
-          <p style={{marginBottom:'12px'}}>
-            <strong>Physical address:</strong><br/>
-            <strong>Kakkanchery, Near KINFRA, Malappuram</strong>
-          </p>
-          <p>
-            <strong>Email address:</strong><br/>
-            <strong>squeakyfms@gmail.com</strong>
-          </p>
-        </div>
-      </footer>
+      <Footer />
     </main>
   );
 }

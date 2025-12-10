@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import Header from '../components/Header';
+import Footer from '../components/Footer';
 
 export const metadata = {
   title: 'About – SqueakyFMS',
@@ -12,7 +13,7 @@ export default function AboutPage() {
       <Header />
 
       <section className="hero" style={{display:'flex', alignItems:'center', gap:'30px'}}>
-        <div className="container lead" style={{flex:'0 0 30%'}}>
+        <div className="container lead" style={{flex:'0 0 25%'}}>
           <h1>About SqueakyFMS</h1>
           <p>With over 5 years of experience in facility management, we've been helping clients maintain clean, safe, and efficient spaces across residential, commercial, and industrial sectors.</p>
           <Link href="/contact" className="btn">Get Started</Link>
@@ -48,30 +49,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <footer className="site-footer" style={{display:'grid', gridTemplateColumns:'1fr 1fr 1fr', gap:'40px', alignItems:'start', padding:'60px 20px'}}>
-        <div className="container">
-          <img src="/Logo-01.png" alt="SqueakyFMS" style={{height:'80px', marginBottom:'20px'}} />
-        </div>
-        
-        <div style={{textAlign:'center', color:'var(--text-light)'}}>
-          <p style={{marginBottom:'20px'}}>&copy; 2025 SqueakyFMS. All rights reserved.</p>
-        </div>
-
-        <div style={{color:'var(--text-light)'}}>
-          <p style={{marginBottom:'12px'}}>
-            <strong>Phone:</strong><br/>
-            <strong>+91 0000000000</strong>
-          </p>
-          <p style={{marginBottom:'12px'}}>
-            <strong>Physical address:</strong><br/>
-            <strong>Kakkanchery, Near KINFRA, Malappuram</strong>
-          </p>
-          <p>
-            <strong>Email address:</strong><br/>
-            <strong>squeakyfms@gmail.com</strong>
-          </p>
-        </div>
-      </footer>
+      <Footer />
     </>
   );
 }
