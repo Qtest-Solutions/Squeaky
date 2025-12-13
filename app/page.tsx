@@ -109,7 +109,8 @@ export default function HomePage() {
               { icon: <Home style={{ width: '48px', height: '48px', color: '#059669' }} />, title: "House Keeping", desc: "Professional house keeping services to maintain a clean and organized home." },
               { icon: <Droplet style={{ width: '48px', height: '48px', color: '#059669' }} />, title: "Deep Cleaning", desc: "Thorough deep cleaning services for every corner of your home or office." },
               { icon: <Sparkles style={{ width: '48px', height: '48px', color: '#059669' }} />, title: "ACP and Glass Cleaning", desc: "Professional cleaning and maintenance of ACP panels and glass surfaces." },
-              { icon: <Wrench style={{ width: '48px', height: '48px', color: '#059669' }} />, title: "House Shifting and Repairs", desc: "Complete house shifting solutions with professional repairs and setup." }
+              { icon: <Wrench style={{ width: '48px', height: '48px', color: '#059669' }} />, title: "GDA Service", desc: "Comprehensive GDA service solutions for facility maintenance and management." },
+              { icon: <Home style={{ width: '48px', height: '48px', color: '#059669' }} />, title: "Packers and Movers", desc: "Professional packing and moving services with safe and secure handling." }
             ].map((service, idx) => (
               <div key={idx} style={{ backgroundColor: 'white', borderRadius: '16px', padding: '32px', boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1)', border: '1px solid #e0f2fe', transition: 'all 0.3s', cursor: 'pointer' }} onMouseEnter={(e) => { e.currentTarget.style.boxShadow = '0 20px 25px -5px rgba(0, 0, 0, 0.15)'; e.currentTarget.style.transform = 'translateY(-8px)'; }} onMouseLeave={(e) => { e.currentTarget.style.boxShadow = '0 4px 6px -1px rgba(0, 0, 0, 0.1)'; e.currentTarget.style.transform = 'translateY(0)'; }}>
                 <div style={{ marginBottom: '16px' }}>{service.icon}</div>

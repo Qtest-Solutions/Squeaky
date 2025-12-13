@@ -22,8 +22,13 @@ const services = [
   },
   {
     icon: <Wrench style={{ width: '48px', height: '48px', color: '#059669' }} />,
-    title: 'House Shifting and Repairs',
-    description: 'Complete house shifting solutions with professional repairs and setup',
+    title: 'GDA Service',
+    description: 'Comprehensive GDA service solutions for facility maintenance and management',
+  },
+  {
+    icon: <Home style={{ width: '48px', height: '48px', color: '#059669' }} />,
+    title: 'Packers and Movers',
+    description: 'Professional packing and moving services with safe and secure handling',
   },
 ];
 
