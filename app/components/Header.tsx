@@ -71,6 +71,7 @@ export default function Header() {
       `}</style>
 
       <header
+        suppressHydrationWarning
         style={{
           position: "sticky",
           top: "0",

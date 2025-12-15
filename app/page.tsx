@@ -1,6 +1,6 @@
 "use client";
 import React, { useState, useEffect, useRef } from 'react';
-import { ArrowRight, Home, Droplet, Sparkles, Wrench } from 'lucide-react';
+import { ArrowRight, Home, ClipboardList, Zap, Sparkles, Wrench, Waves, Truck } from 'lucide-react';
 import Header from './components/Header';
 import Footer from './components/Footer';
 
@@ -106,11 +106,13 @@ export default function HomePage() {
           <h2 style={{ fontSize: 'clamp(24px, 4vw, 48px)', fontWeight: 'bold', textAlign: 'center', color: '#111827', marginBottom: '48px', margin: '0 0 48px 0' }}>What We Offer</h2>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '32px' }}>
             {[
-              { icon: <Home style={{ width: '48px', height: '48px', color: '#059669' }} />, title: "House Keeping", desc: "Professional house keeping services to maintain a clean and organized home." },
-              { icon: <Droplet style={{ width: '48px', height: '48px', color: '#059669' }} />, title: "Deep Cleaning", desc: "Thorough deep cleaning services for every corner of your home or office." },
+              { icon: <ClipboardList style={{ width: '48px', height: '48px', color: '#059669' }} />, title: "House Keeping", desc: "Professional house keeping services to maintain a clean and organized home." },
+              { icon: <Zap style={{ width: '48px', height: '48px', color: '#059669' }} />, title: "Mechanised Deep Cleaning", desc: "Mechanised deep cleaning using modern equipment for thorough sanitization." },
               { icon: <Sparkles style={{ width: '48px', height: '48px', color: '#059669' }} />, title: "ACP and Glass Cleaning", desc: "Professional cleaning and maintenance of ACP panels and glass surfaces." },
               { icon: <Wrench style={{ width: '48px', height: '48px', color: '#059669' }} />, title: "GDA Service", desc: "Comprehensive GDA service solutions for facility maintenance and management." },
-              { icon: <Home style={{ width: '48px', height: '48px', color: '#059669' }} />, title: "Packers and Movers", desc: "Professional packing and moving services with safe and secure handling." }
+              { icon: <Home style={{ width: '48px', height: '48px', color: '#059669' }} />, title: "Home Cleaning", desc: "Reliable home cleaning services for daily and periodic upkeep." },
+              { icon: <Waves style={{ width: '48px', height: '48px', color: '#059669' }} />, title: "Carpet Shampooing", desc: "Specialized carpet shampooing to remove stains and refresh fibers." },
+              { icon: <Truck style={{ width: '48px', height: '48px', color: '#059669' }} />, title: "Packers and Movers", desc: "Professional packing and moving services with safe and secure handling." }
             ].map((service, idx) => (
               <div key={idx} style={{ backgroundColor: 'white', borderRadius: '16px', padding: '32px', boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1)', border: '1px solid #e0f2fe', transition: 'all 0.3s', cursor: 'pointer' }} onMouseEnter={(e) => { e.currentTarget.style.boxShadow = '0 20px 25px -5px rgba(0, 0, 0, 0.15)'; e.currentTarget.style.transform = 'translateY(-8px)'; }} onMouseLeave={(e) => { e.currentTarget.style.boxShadow = '0 4px 6px -1px rgba(0, 0, 0, 0.1)'; e.currentTarget.style.transform = 'translateY(0)'; }}>
                 <div style={{ marginBottom: '16px' }}>{service.icon}</div>

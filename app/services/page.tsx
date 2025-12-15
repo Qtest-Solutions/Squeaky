@@ -1,19 +1,19 @@
 'use client';
 import React from 'react';
-import { ArrowRight, Home, Droplet, Sparkles, Wrench, Award, Users, DollarSign } from 'lucide-react';
+import { ArrowRight, ClipboardList, Zap, Sparkles, Wrench, Waves, Truck, Award, Users, DollarSign, Home } from 'lucide-react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 
 const services = [
   {
-    icon: <Home style={{ width: '48px', height: '48px', color: '#059669' }} />,
+    icon: <ClipboardList style={{ width: '48px', height: '48px', color: '#059669' }} />,
     title: 'House Keeping',
     description: 'Professional house keeping services to maintain a clean and organized home',
   },
   {
-    icon: <Droplet style={{ width: '48px', height: '48px', color: '#059669' }} />,
-    title: 'Deep Cleaning',
-    description: 'Thorough deep cleaning services for every corner of your home or office',
+    icon: <Zap style={{ width: '48px', height: '48px', color: '#059669' }} />,
+    title: 'Mechanised Deep Cleaning',
+    description: 'Mechanised deep cleaning using modern equipment for thorough sanitization',
   },
   {
     icon: <Sparkles style={{ width: '48px', height: '48px', color: '#059669' }} />,
@@ -27,6 +27,16 @@ const services = [
   },
   {
     icon: <Home style={{ width: '48px', height: '48px', color: '#059669' }} />,
+    title: 'Home Cleaning',
+    description: 'Reliable home cleaning services for daily and periodic upkeep',
+  },
+  {
+    icon: <Waves style={{ width: '48px', height: '48px', color: '#059669' }} />,
+    title: 'Carpet Shampooing',
+    description: 'Specialized carpet shampooing to remove stains and refresh fibers',
+  },
+  {
+    icon: <Truck style={{ width: '48px', height: '48px', color: '#059669' }} />,
     title: 'Packers and Movers',
     description: 'Professional packing and moving services with safe and secure handling',
   },
