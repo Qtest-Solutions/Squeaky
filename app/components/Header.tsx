@@ -1,30 +1,33 @@
 'use client';
 
 import Link from 'next/link';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { usePathname } from 'next/navigation';
 import { Menu, X } from 'lucide-react';
 
 export default function Header() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
 
   const isActive = (href: string) => pathname === href;
 
+  useEffect(() => {
+    const onScroll = () => {
+      setScrolled(window.scrollY > 40);
+    };
+    window.addEventListener('scroll', onScroll);
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
+
   return (
     <>
-      {/* INTERNAL CSS FOR MODERN HEADER EFFECTS */}
       <style>{`
         .nav-link {
           position: relative;
           font-weight: 500;
-          color: #0f172a;
           padding-bottom: 4px;
           transition: color 0.3s ease;
-        }
-
-        .nav-link:hover {
-          color: #059669;
         }
 
         .nav-link::after {
@@ -39,99 +42,86 @@ export default function Header() {
           border-radius: 4px;
         }
 
-        .nav-link:hover::after {
-          width: 100%;
-        }
-
-        .nav-link.active {
-          color: #059669;
-          font-weight: 700;
-        }
-
+        .nav-link:hover::after,
         .nav-link.active::after {
           width: 100%;
         }
 
-        /* MOBILE MENU */
         @media (max-width: 850px) {
-          .desktop-menu {
-            display: none !important;
-          }
-
-          .mobile-menu {
-            display: flex !important;
-          }
+          .desktop-menu { display: none !important; }
+          .mobile-menu { display: flex !important; }
         }
 
         @media (min-width: 851px) {
-          .mobile-menu-dropdown {
-            display: none !important;
-          }
+          .mobile-menu-dropdown { display: none !important; }
         }
       `}</style>
 
       <header
         suppressHydrationWarning
         style={{
-          position: "sticky",
-          top: "0",
-          zIndex: "1000",
-          backdropFilter: "blur(12px)",
-          background: "rgba(255, 255, 255, 0.75)",
-          borderBottom: "1px solid rgba(0, 0, 0, 0.08)",
-          boxShadow: "0 4px 20px rgba(0, 0, 0, 0.05)",
+          position: 'fixed',
+          top: 0,
+          left: 0,
+          width: '100%',
+          zIndex: 1000,
+          transition: 'all 0.3s ease',
+          background: scrolled ? 'rgba(255,255,255,0.95)' : 'transparent',
+          boxShadow: scrolled ? '0 4px 20px rgba(0,0,0,0.08)' : 'none',
+          backdropFilter: scrolled ? 'blur(8px)' : 'none',
         }}
       >
         <div
           style={{
-            maxWidth: "1200px",
-            margin: "0 auto",
-            padding: "18px 32px",
-            display: "flex",
-            justifyContent: "space-between",
-            alignItems: "center",
+            margin: '0 auto',
+            padding: '18px 32px',
+            display: 'flex',
+            justifyContent: 'space-between',
+            alignItems: 'center',
           }}
         >
-          {/* Logo */}
-          <Link href="/">
-            <img
-              src="/Logo-01.png"
-              alt="SqueakyFMS"
-              style={{
-                height: "58px",
-                cursor: "pointer",
-                transition: "transform 0.3s ease",
-              }}
-              onMouseEnter={(e) => (e.currentTarget.style.transform = "scale(1.05)")}
-              onMouseLeave={(e) => (e.currentTarget.style.transform = "scale(1)")}
-            />
-          </Link>
+      <Link href="/">
+  <img
+    src="/Logo-01.png"
+    alt="SqueakyFMS"
+    style={{
+      height: '80px',
+      cursor: 'pointer',
+      transition: 'all 0.3s ease',
+      filter: scrolled
+        ? 'none'
+        : 'brightness(0) invert(1) drop-shadow(0 2px 6px rgba(0,0,0,0.6))',
+    }}
+  />
+</Link>
 
-          {/* Desktop Menu */}
-          <nav className="desktop-menu" style={{ display: "flex" }}>
+
+          <nav className="desktop-menu">
             <ul
               style={{
-                display: "flex",
-                gap: "32px",
-                listStyle: "none",
+                display: 'flex',
+                gap: '36px',
+                listStyle: 'none',
                 margin: 0,
                 padding: 0,
               }}
             >
               {[
-                { href: "/", label: "Home" },
-                { href: "/services", label: "Services" },
-                { href: "/about", label: "About" },
-                { href: "/contact", label: "Contact" },
+                { href: '/', label: 'Home' },
+                { href: '/services', label: 'Services' },
+                { href: '/about', label: 'About' },
+                { href: '/contact', label: 'Contact' },
               ].map((item) => (
                 <li key={item.href}>
                   <Link
                     href={item.href}
-                    className={`nav-link ${isActive(item.href) ? "active" : ""}`}
-                    style={{
-                      textDecoration: "none",
-                      fontSize: "1rem",
-                    }}
+                    className={`nav-link ${isActive(item.href) ? 'active' : ''}`}
+                   style={{
+  textDecoration: 'none',
+  color: '#0f172a',
+  fontWeight: isActive(item.href) ? 700 : 500,
+}}
+
                   >
                     {item.label}
                   </Link>
@@ -140,60 +130,53 @@ export default function Header() {
             </ul>
           </nav>
 
-          {/* Mobile Menu Button */}
           <div
             className="mobile-menu"
-            style={{
-              display: "none",
-              cursor: "pointer",
-            }}
+            style={{ display: 'none', cursor: 'pointer' }}
             onClick={() => setOpen(!open)}
           >
             {open ? (
-              <X style={{ width: '28px', height: '28px', color: '#0f172a', transition: '0.3s' }} />
+              <X size={28} color={scrolled ? '#0f172a' : 'white'} />
             ) : (
-              <Menu style={{ width: '28px', height: '28px', color: '#0f172a', transition: '0.3s' }} />
+              <Menu size={28} color={scrolled ? '#0f172a' : 'white'} />
             )}
           </div>
         </div>
 
-        {/* Mobile Dropdown Menu */}
         {open && (
           <div
             className="mobile-menu-dropdown"
             style={{
-              background: "rgba(255,255,255,0.95)",
-              backdropFilter: "blur(10px)",
-              padding: "20px 32px",
-              borderBottom: "1px solid rgba(0,0,0,0.08)",
-              animation: "fadeDown 0.3s ease",
+              background: scrolled ? 'white' : 'rgba(0,0,0,0.9)',
+              padding: '24px 32px',
+              borderBottom: '1px solid rgba(0,0,0,0.08)',
             }}
           >
             <ul
               style={{
-                display: "flex",
-                flexDirection: "column",
-                gap: "20px",
-                listStyle: "none",
+                display: 'flex',
+                flexDirection: 'column',
+                gap: '20px',
+                listStyle: 'none',
                 margin: 0,
                 padding: 0,
               }}
             >
               {[
-                { href: "/", label: "Home" },
-                { href: "/services", label: "Services" },
-                { href: "/about", label: "About" },
-                { href: "/contact", label: "Contact" },
+                { href: '/', label: 'Home' },
+                { href: '/services', label: 'Services' },
+                { href: '/about', label: 'About' },
+                { href: '/contact', label: 'Contact' },
               ].map((item) => (
                 <li key={item.href}>
                   <Link
                     href={item.href}
                     onClick={() => setOpen(false)}
-                    className={`nav-link ${isActive(item.href) ? "active" : ""}`}
+                    className={`nav-link ${isActive(item.href) ? 'active' : ''}`}
                     style={{
-                      textDecoration: "none",
-                      fontSize: "1.2rem",
-                      display: "block",
+                      textDecoration: 'none',
+                      fontSize: '1.2rem',
+                      color: scrolled ? '#0f172a' : 'white',
                     }}
                   >
                     {item.label}
