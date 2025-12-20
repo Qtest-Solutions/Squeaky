@@ -1,6 +1,6 @@
 "use client";
 import React, { useState, useEffect, useRef } from 'react';
-import { ArrowRight, Home, ClipboardList, Zap, Sparkles, Wrench, Waves, Truck, CheckCircle2 } from 'lucide-react';
+import { ArrowRight} from 'lucide-react';
 import Header from './components/Header';
 import Footer from './components/Footer';
 
