@@ -1,8 +1,9 @@
 "use client";
 import React, { useState, useEffect, useRef } from 'react';
-import { ArrowRight} from 'lucide-react';
+import { ArrowRight, Home, ClipboardList, Zap, Sparkles, Wrench, Waves, Truck, CheckCircle2 } from 'lucide-react';
 import Header from './components/Header';
 import Footer from './components/Footer';
+import TrustedPartnersCarousel from './components/TrustedPartnersCarousel';
 
 function CountUp({ target, duration = 2 }: { target: number; duration?: number }) {
   const [count, setCount] = useState(0);
@@ -199,8 +200,22 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+{/* Our Trusted Partners Section */}
+<section style={{ padding: "100px 20px", background: "linear-gradient(180deg, #ffffff 0%, #f9fafb 100%)" }}>
+  <div style={{ maxWidth: "80rem", margin: "0 auto" }}>
+    <div style={{ textAlign: "center", marginBottom: "80px" }}>
+      <h2 style={{ fontSize: "clamp(36px, 5vw, 56px)", fontWeight: 800, color: "#111827", marginBottom: "20px" }}>
+        Our Trusted Partners
+      </h2>
+      <p style={{ fontSize: "19px", color: "#6b7280", maxWidth: "650px", margin: "0 auto" }}>
+        Proud to serve leading brands and organizations across India
+      </p>
+    </div>
 
-      {/* Our Works Section - Modern */}
+    <TrustedPartnersCarousel />
+  </div>
+</section>
+
       <section style={{ padding: '100px 20px', background: 'linear-gradient(180deg, #ffffff 0%, #f9fafb 100%)' }}>
         <div style={{ maxWidth: '80rem', margin: '0 auto' }}>
           <div style={{ textAlign: 'center', marginBottom: '80px' }}>
@@ -267,25 +282,119 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-
   {/* Why Choose Us Section */}
-      <section style={{ padding: '60px 20px', background: 'linear-gradient(180deg, #f9fafb 0%, #f0fdf4 100%)' }}>
-        <div style={{ maxWidth: '80rem', margin: '0 auto' }}>
-          <h2 style={{ fontSize: 'clamp(24px, 4vw, 48px)', fontWeight: 'bold', textAlign: 'center', color: '#111827', marginBottom: '48px', margin: '0 0 48px 0' }}>Why Choose Us</h2>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '32px' }}>
-            {[
-              "Reliable and trained professionals",
-              "Modern equipment & eco-friendly solutions",
-              "Affordable and flexible contracts",
-              "Commitment to safety and compliance"
-            ].map((reason, idx) => (
-              <div key={idx} style={{ backgroundColor: 'white', borderRadius: '16px', padding: '40px', textAlign: 'center', boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1)', border: '1px solid #e0f2fe', transition: 'all 0.3s' }} onMouseEnter={(e) => { e.currentTarget.style.boxShadow = '0 20px 25px -5px rgba(0, 0, 0, 0.15)'; e.currentTarget.style.transform = 'translateY(-8px)'; }} onMouseLeave={(e) => { e.currentTarget.style.boxShadow = '0 4px 6px -1px rgba(0, 0, 0, 0.1)'; e.currentTarget.style.transform = 'translateY(0)'; }}>
-                <h3 style={{ fontSize: '20px', fontWeight: 'bold', color: '#065f46', marginBottom: '16px', margin: '0 0 16px 0' }}>{reason}</h3>
-              </div>
-            ))}
+{/* Why Choose Us – New UI */}
+<section
+  style={{
+    padding: "100px 20px",
+    backgroundColor: "#f5f5f4"
+  }}
+>
+  <div
+    style={{
+      maxWidth: "80rem",
+      margin: "0 auto",
+      display: "grid",
+      gridTemplateColumns: "1.1fr 0.9fr",
+      gap: "80px",
+      alignItems: "center"
+    }}
+  >
+    {/* LEFT CONTENT */}
+    <div>
+      <h2
+        style={{
+          fontSize: "clamp(32px, 4vw, 48px)",
+          fontWeight: 800,
+          color: "#111827",
+          marginBottom: "40px"
+        }}
+      >
+        Why Choose Us
+      </h2>
+
+      <div
+        style={{
+          display: "grid",
+          gridTemplateColumns: "repeat(2, 1fr)",
+          gap: "40px"
+        }}
+      >
+        {/* 01 */}
+        <div>
+          <div style={{ fontSize: "28px", fontWeight: 700, marginBottom: "8px" }}>
+            01
           </div>
+          <h4 style={{ fontSize: "16px", fontWeight: 700, marginBottom: "6px" }}>
+            Reliable and trained professionals
+          </h4>
+          <p style={{ fontSize: "14px", color: "#6b7280", margin: 0 }}>
+            Our workforce is professionally trained and consistently monitored to
+            deliver dependable service.
+          </p>
         </div>
-      </section>
+
+        {/* 02 */}
+        <div>
+          <div style={{ fontSize: "28px", fontWeight: 700, marginBottom: "8px" }}>
+            02
+          </div>
+          <h4 style={{ fontSize: "16px", fontWeight: 700, marginBottom: "6px" }}>
+            Modern equipment & eco-friendly solutions
+          </h4>
+          <p style={{ fontSize: "14px", color: "#6b7280", margin: 0 }}>
+            We use modern tools and sustainable methods for safe and effective
+            facility care.
+          </p>
+        </div>
+
+        {/* 03 */}
+        <div>
+          <div style={{ fontSize: "28px", fontWeight: 700, marginBottom: "8px" }}>
+            03
+          </div>
+          <h4 style={{ fontSize: "16px", fontWeight: 700, marginBottom: "6px" }}>
+            Affordable and flexible contracts
+          </h4>
+          <p style={{ fontSize: "14px", color: "#6b7280", margin: 0 }}>
+            Our service plans are designed to suit different budgets and
+            operational needs.
+          </p>
+        </div>
+
+        {/* 04 */}
+        <div>
+          <div style={{ fontSize: "28px", fontWeight: 700, marginBottom: "8px" }}>
+            04
+          </div>
+          <h4 style={{ fontSize: "16px", fontWeight: 700, marginBottom: "6px" }}>
+            Commitment to safety and compliance
+          </h4>
+          <p style={{ fontSize: "14px", color: "#6b7280", margin: 0 }}>
+            Safety standards and compliance are strictly followed across all
+            projects.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    {/* RIGHT IMAGE */}
+    <div style={{ position: "relative" }}>
+      <img
+        src="/about-us-page-cta-image.webp"
+        alt="Why Choose Us"
+        style={{
+          width: "100%",
+          height: "520px",
+          objectFit: "cover",
+          borderRadius: "28px",
+          boxShadow: "0 24px 48px rgba(0,0,0,0.18)"
+        }}
+      />
+    </div>
+  </div>
+</section>
+
       {/* Perfection Section - Modern */}
       <section style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(450px, 1fr))', overflow: 'hidden' }}>
         <div style={{ background: 'linear-gradient(135deg, #0f172a 0%, #1e293b 100%)', color: 'white', padding: '100px 80px', display: 'flex', flexDirection: 'column', justifyContent: 'center', position: 'relative', overflow: 'hidden' }}>
